@@ -189,6 +189,12 @@ function esVerdadero(valor) {
 }
 
 function tieneTresDigitos(num) {
+   num=num.toString();
+   if(num.length === 3){
+      return true;
+   } else {
+      return false;
+   }
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
@@ -199,6 +205,13 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let i = 0;
+   do{
+      i = i + 1;
+      num = num + 5;
+   }
+   while(i < 8);
+   return num;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
