@@ -130,7 +130,14 @@ function sumarLikesDeUsuario(objetoUsuario) {
    // Este arreglo contiene objetos (post).
    // Cada post posee una propiedad llamada "likes". Esta propiedad es un número.
    // Debes sumar los likes de todos los post y retornar el resultado.
-   // Tu código:
+   // Tu código:objetoUsuario (objeto)->posts(prop tipo arreglo con objetos)->los objetos dentro del arreglo posts
+   //cada objeto dentro del arreglo tiene una prop -> likes = numerica
+   var suma = 0;
+   objetoUsuario.posts.forEach(post => {
+      suma = suma + post.likes;//tambien se puede hacer suma = suma + post["likes"];
+   });
+   return suma;
+
 }
 
 function agregarMetodoCalculoDescuento(objetoProducto) {
@@ -144,6 +151,15 @@ function agregarMetodoCalculoDescuento(objetoProducto) {
    // PorcentajeDeDescuento ---> 0.2
    // Precio final ---> 8
    // Tu código:
+   //creo una nueva propiedad, hago el calculo, ingresando a las propiedaddes del objeto, returno el resultado
+   //y para q me tome q ha sido creada, debo retornar el objeto
+      objetoProducto.calcularPrecioDescuento = function() {
+         var descuento = this.precio * this.porcentajeDeDescuento;
+         var precioFinal = this.precio - descuento;
+         return precioFinal;
+      };
+      return objetoProducto;
+   
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
